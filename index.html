@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COMING SOON</title>
+  <!-- Google Font: Martian Mono (Medium requested below via font-weight) -->
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg,#0f172a 0%, #071129 100%);
+      font-family: 'Martian Mono', monospace;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:#fff;
+    }
+
+    /* Big centered text */
+    h1{
+      font-weight:500; /* Medium */
+      font-size: clamp(96px, 22vw, 320px); /* very huge but responsive */
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      text-transform:uppercase;
+      text-align:center;
+      margin:0 2rem;
+      text-shadow:
+        0 6px 30px rgba(3,7,18,0.9),
+        0 2px 8px rgba(0,0,0,0.6);
+      -webkit-text-stroke: 1px rgba(255,255,255,0.02);
+    }
+
+    /* Subtle animated underline glow */
+    .glow-wrap{
+      position:relative;
+      display:inline-block;
+      padding-bottom: .05em;
+    }
+    .glow-wrap::after{
+      content:"";
+      position:absolute;
+      left:0;right:0;bottom:-0.15em;height:0.25em;
+      background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+      filter: blur(10px);
+      opacity:0.9;
+      transform: scaleX(1);
+      transition:transform .6s cubic-bezier(.2,.9,.2,1);
+    }
+    h1:hover .glow-wrap::after{ transform: scaleX(1.05) }
+
+    /* Make sure it fits cleanly on very narrow screens */
+    @media (max-width:420px){
+      h1{font-size: clamp(64px, 18vw, 120px);}
+    }
+  </style>
+</head>
+<body>
+  <h1><span class="glow-wrap">COMING SOON</span></h1>
+</body>
+</html>
